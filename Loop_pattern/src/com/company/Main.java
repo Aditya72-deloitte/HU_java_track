@@ -1,29 +1,36 @@
 package com.company;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        int space = 9;
-        for(int i = 1 ; i < 20 ; i++){
-            if(i<=10){
-                for(int sp = 0; sp<space; sp++){
-                    System.out.print(" ");
-                }
-                for(int st = 1; st <= i ; st++){
-                    System.out.print("*");
-                }
-                System.out.println("");
-                space--;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of rows :");
+        int rows = sc.nextInt();
+        int sp = rows-1;
+        int star = 0;
+        rows = rows*2;
+
+        for(int i = 1 ; i < rows ; i++){
+            //System.out.print(sp+ " " + star);
+            for(int j = 0 ; j <= sp ; j++){
+                System.out.print(" ");
+            }
+            for(int j = 0 ; j <= star ; j++){
+                System.out.print("*");
+            }
+            if(i < rows/2){
+                sp--;
+                star++;
             }
             else{
-                for(int sp =1 ; sp<=i-10; sp++){
-                    System.out.print(" ");
-                }
-                for(int st = 20-i; st>0;st--){
-                    System.out.print("*");
-                }
-                System.out.println("");
+                star--;
+                sp++;
             }
+            System.out.println("");
+
+
         }
+
     }
 }
